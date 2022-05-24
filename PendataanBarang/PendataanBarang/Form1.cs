@@ -1,4 +1,5 @@
-﻿using System;
+// Library Apa Saja yang digunakan
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,8 +14,8 @@ namespace PendataanBarang
 {
     public partial class Form1 : Form
     {
-        // Rizki Januar Irmansyah
-        // Mendeklarasikan Variabel Dan Melakukan Koneksi Pada Database
+        // Rizki Januar I.
+        // Mendeklarasikan Variabel & Melakukan Koneksi Pada Database
         private SqlCommand cmd;
         private DataSet ds;
         private SqlDataAdapter da;

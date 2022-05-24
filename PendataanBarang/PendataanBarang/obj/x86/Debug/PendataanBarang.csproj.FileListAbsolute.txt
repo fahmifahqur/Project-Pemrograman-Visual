@@ -1,0 +1,8 @@
+D:\Belajar\C Sharp\PendataanBarang\PendataanBarang\bin\Debug\PendataanBarang.exe
+D:\Belajar\C Sharp\PendataanBarang\PendataanBarang\bin\Debug\PendataanBarang.pdb
+D:\Belajar\C Sharp\PendataanBarang\PendataanBarang\obj\x86\Debug\PendataanBarang.Form1.resources
+D:\Belajar\C Sharp\PendataanBarang\PendataanBarang\obj\x86\Debug\PendataanBarang.Properties.Resources.resources
+D:\Belajar\C Sharp\PendataanBarang\PendataanBarang\obj\x86\Debug\PendataanBarang.csproj.GenerateResource.Cache
+D:\Belajar\C Sharp\PendataanBarang\PendataanBarang\obj\x86\Debug\PendataanBarang.exe
+D:\Belajar\C Sharp\PendataanBarang\PendataanBarang\obj\x86\Debug\PendataanBarang.pdb
+D:\Belajar\C Sharp\PendataanBarang\PendataanBarang\obj\x86\Debug\PendataanBarang.csprojResolveAssemblyReference.cache

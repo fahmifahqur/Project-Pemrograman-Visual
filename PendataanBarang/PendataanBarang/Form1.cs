@@ -90,24 +90,30 @@ namespace PendataanBarang
         // Membuat fungsi untuk menuliskan kode secara otomatis setelah urutan terakhir
         void KodeOtomatis()
         {
+            //mengintegrasikan variabel
             long hitung;
             string urutan;
-            SqlDataReader dr;
+            SqlDataReader rd;
+            //menghubungkan dengan database
             Conn.Open();
             cmd = new SqlCommand("Select KodeBarang from TBL_BARANG where KodeBarang in(select max(KodeBarang) from TBL_BARANG) order by KodeBarang desc", Conn);
-            dr = cmd.ExecuteReader();
-            dr.Read();
-            if (dr.HasRows)
+            rd = cmd.ExecuteReader();
+            rd.Read();
+            //
+            //jika terdapat baris/data dalam tabel, seleksi kode barang, dan buat kode urutan selanjutnya
+            if (rd.HasRows)
             {
-                hitung = Convert.ToInt64(dr[0].ToString().Substring(dr["KodeBarang"].ToString().Length - 3, 3)) + 1;
+                hitung = Convert.ToInt64(rd[0].ToString().Substring(rd["KodeBarang"].ToString().Length - 3, 3)) + 1;
                 string joinstr = "000" + hitung;
                 urutan = "BRG" + joinstr.Substring(joinstr.Length - 3, 3);
             }
+            //jika tidak ada, maka buat kode barang baru
             else
             {
                 urutan = "BRG001";
             }
-            dr.Close();
+            //menutup SqlDataReader dan koneksi pada database
+            rd.Close();
             textBox1.Text = urutan;
             Conn.Close();
         }
@@ -123,10 +129,12 @@ namespace PendataanBarang
         // Melakukan input data yang akan disimpan pada Database dan ditampilkan pada Data Grid View
         private void InputButton_Click(object sender, EventArgs e)
         {
+            //seleksi semua textbox, jika textbox belum diisi value, maka tampilkan pesan kesalahan
             if (textBox1.Text.Trim() == "" || textBox2.Text.Trim() == "" || textBox3.Text.Trim() == "" || textBox4.Text.Trim() == "" || textBox5.Text.Trim() == "" || textBox6.Text.Trim() == "")
             {
                 MessageBox.Show("Data Belum Lengkap!");
             }
+            //jika semua sudah terisi, lakukan koneksi dan query pada database
             else
             {
                 try
@@ -151,6 +159,7 @@ namespace PendataanBarang
         // dimunculkan pada text box
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //lakukan integrasi pada setiap kolom dalam baris data
             try
             {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];

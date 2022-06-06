@@ -117,11 +117,23 @@ namespace PendataanBarang
             textBox1.Text = urutan;
             Conn.Close();
         }
+        
+        // Membuat Combo Box
+        void ComboBox()
+        {
+            textBox3.Items.Add("Makanan");
+            textBox3.Items.Add("Minuman");
+            textBox3.Items.Add("Sembako");
+            textBox3.Items.Add("Elektronik");
+            textBox3.Items.Add("Obat");
+            textBox3.Items.Add("Keperluan Pribadi");
+        }
 
         // Melakukan pemanggilan fungsi Bersihkan, TampilBarang, Dan KodeOtomatis pada Form1_Load
         private void Form1_Load(object sender, EventArgs e)
         {
             Bersihkan();
+            ComboBox();
             TampilBarang();
             KodeOtomatis();
         }
